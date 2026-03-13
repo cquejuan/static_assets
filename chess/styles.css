@@ -1,3 +1,6 @@
+/* CSS: variables, layout, board visuals, history panel, labels */
+
+/* Root variables: board size and theme colors */
 :root {
     --board-size: 56px;
     --accent: #6b82ff;
@@ -5,6 +8,7 @@
     --bg-end: #eef4f8;
 }
 
+/* Page base: set height and system font */
 html,
 body {
     height: 100%;
@@ -12,6 +16,7 @@ body {
     font-family: system-ui, Arial, sans-serif
 }
 
+/* Page body layout: centered background card */
 body {
     display: flex;
     align-items: center;
@@ -22,6 +27,7 @@ body {
     color: #213547;
 }
 
+/* App card container */
 .container {
     width: min(96vw, 820px);
     background: rgba(255, 255, 255, 0.72);
@@ -34,6 +40,7 @@ body {
     gap: 12px;
 }
 
+/* Heading */
 h1 {
     margin: 0;
     font-size: 20px;
@@ -41,12 +48,14 @@ h1 {
     letter-spacing: 0.2px;
 }
 
+/* Join form layout */
 form {
     display: flex;
     gap: 8px;
     align-items: center
 }
 
+/* Form inputs */
 form input {
     padding: 10px 12px;
     border-radius: 8px;
@@ -55,6 +64,7 @@ form input {
     box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
+/* Buttons (primary) */
 button {
     padding: 10px 14px;
     border-radius: 8px;
@@ -65,6 +75,7 @@ button {
     box-shadow: 0 4px 8px rgba(107, 130, 255, 0.18);
 }
 
+/* Game area (hidden until join) */
 #game {
     width: 100%;
     display: flex;
@@ -72,6 +83,7 @@ button {
     align-items: center
 }
 
+/* Players list chips */
 #players {
     margin-top: 6px;
     display: flex;
@@ -87,12 +99,14 @@ button {
     font-size: 13px
 }
 
+/* Status text */
 #status {
     margin-top: 6px;
     color: #334e68;
     font-size: 14px
 }
 
+/* Board wrapper */
 #board {
     display: inline-block;
     margin-top: 12px;
@@ -102,10 +116,12 @@ button {
     box-shadow: 0 6px 18px rgba(16, 24, 40, 0.06);
 }
 
+/* Rank row inside board (left label + rank) */
 #board .rank {
     display: flex
 }
 
+/* Square cell */
 .square {
     width: var(--board-size);
     height: var(--board-size);
@@ -117,29 +133,35 @@ button {
     user-select: none;
 }
 
+/* Square hover effect */
 .square:hover {
     transform: translateY(-3px)
 }
 
+/* Light square color */
 .light {
     background: #f8efe0
 }
 
+/* Dark square color */
 .dark {
     background: #c3aa87
 }
 
+/* Selected square highlight */
 .selected {
     box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.95);
     border-radius: 6px;
     background: rgba(16, 185, 129, 0.12)
 }
 
+/* Chess piece glyph styling */
 .piece {
     cursor: pointer;
     font-size: 30px
 }
 
+/* Responsive: larger board/piece sizes on wide screens */
 @media (min-width:720px) {
     :root {
         --board-size: 64px
@@ -150,6 +172,7 @@ button {
     }
 }
 
+/* Join status line */
 .join-status {
     margin-top: 10px;
     font-size: 13px;
@@ -165,11 +188,13 @@ button {
     color: #157d4a
 }
 
+/* Disabled join button */
 #join-btn[disabled] {
     opacity: 0.6;
     cursor: not-allowed
 }
 
+/* Inline spinner loader */
 .spinner {
     width: 16px;
     height: 16px;
@@ -239,17 +264,19 @@ button {
     }
 }
 
-/* Board coordinate labels */
+/* Coordinate label variables */
 :root {
     --rank-label-width: 24px;
     --rank-label-gap: 6px
 }
 
+/* Rank-row (adds left-side numeric labels) */
 .rank-row {
     display: flex;
     align-items: center
 }
 
+/* Rank label (left of each board row) */
 .rank-label {
     width: var(--rank-label-width);
     margin-right: var(--rank-label-gap);
@@ -258,6 +285,7 @@ button {
     text-align: center
 }
 
+/* File labels (bottom A..H) */
 .file-labels {
     display: flex;
     align-items: center;
